@@ -3,7 +3,7 @@ import math
 input_file = "input.txt"
 
 
-def calc_fuel_for_mass_and_fuel(moduleMass):
+def calc_fuel_for_mass_and_fuel(moduleMass: int) -> float:
     total_fuel = 0
     next_fuel = math.floor(moduleMass / 3) - 2
     while next_fuel > 0:
