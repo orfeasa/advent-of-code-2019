@@ -3,7 +3,7 @@ input_file = "input.txt"
 
 planets = {}
 """
-planets are stored in a dictionary, in the  the format "PL1" : "PL2", 
+planets are stored in a dictionary, in the  the format "PL1" : "PL2",
 which means PL2 orbits around PL1. The central planet orbits around
 nothing, so for this case the value would be "COM": None.
 """
@@ -16,7 +16,7 @@ with open(input_file) as f:
 
 
 def find_path_to_COM_from(planet):
-    while planets[planet] != None:
+    while planets[planet] is not None:
         val = []
         val += find_path_to_COM_from(planets[planet])
         val.append(planet)
@@ -39,4 +39,3 @@ result = (len(path_from_YOU_to_COM) - len(common_path) - 1) + (
 )
 
 print(result)
-

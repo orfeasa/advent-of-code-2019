@@ -67,7 +67,7 @@ def ore_for_1_fuel(reactions):
     # initialize with desired output
     input_required = {"FUEL": 1}
     contains_only_ore = False
-    while contains_only_ore == False:
+    while contains_only_ore is False:
         max_level = max(chemicals_levels.values())
 
         # for each layer of priority, starting from the greatest

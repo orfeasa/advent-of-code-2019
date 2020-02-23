@@ -7,6 +7,7 @@ input_lines = """<x=3, y=3, z=0>
 <x=-10, y=-6, z=5>
 <x=-3, y=0, z=-13>"""
 
+
 def print_status(steps, vel, pos):
     print(f"After {steps} steps:")
     for moon in range(len(pos)):
@@ -19,7 +20,8 @@ def calc_next_state(vel, pos):
     for moon1 in range(no_of_moons):
         for moon2 in range(moon1 + 1, no_of_moons):
             for coord in range(3):
-                # change each coordinate for each axis by +1 or -1 to bring them closer together
+                # change each coordinate for each axis by +1 or -1 to bring
+                # them closer together
                 if pos[moon1][coord] > pos[moon2][coord]:
                     vel[moon1][coord] -= 1
                     vel[moon2][coord] += 1
@@ -63,9 +65,8 @@ while None in periods_per_axis:
     for coord in coords_left:
         found = True
         for moon in range(no_of_moons):
-            if (
-                (pos[moon][coord] != pos0[moon][coord])
-                or (vel[moon][coord] != vel0[moon][coord])
+            if (pos[moon][coord] != pos0[moon][coord]) or (
+                vel[moon][coord] != vel0[moon][coord]
             ):
                 found = False
                 break

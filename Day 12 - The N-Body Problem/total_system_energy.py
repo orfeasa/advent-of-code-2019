@@ -31,7 +31,8 @@ for step in range(no_of_steps):
     for moon1 in range(no_of_moons):
         for moon2 in range(moon1 + 1, no_of_moons):
             for coord in range(3):
-                # change each coordinate for each axis by +1 or -1 to bring them closer together
+                # change each coordinate for each axis by +1 or -1 to bring
+                # them closer together
                 if pos[moon1][coord] > pos[moon2][coord]:
                     vel[moon1][coord] -= 1
                     vel[moon2][coord] += 1

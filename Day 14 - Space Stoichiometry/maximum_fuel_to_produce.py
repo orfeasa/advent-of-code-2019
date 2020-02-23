@@ -1,7 +1,8 @@
 import math
 
 input_fileName = "input.txt"
-ore_collected = 10 ** 12 
+ore_collected = 10 ** 12
+
 
 def read_input(input_fileName):
     reactions = {}
@@ -67,7 +68,7 @@ def ore_for_fuel(fuel_qty, reactions):
     # initialize with desired output
     input_required = {"FUEL": fuel_qty}
     contains_only_ore = False
-    while contains_only_ore == False:
+    while contains_only_ore is False:
         max_level = max(chemicals_levels.values())
 
         # for each layer of priority, starting from the greatest
@@ -116,17 +117,17 @@ def ore_for_fuel(fuel_qty, reactions):
     return input_required["ORE"]
 
 
-reactions= read_input(input_fileName)
+reactions = read_input(input_fileName)
 
 ore_for_1_fuel = ore_for_fuel(1, reactions)
 
-# initialize fuel_qty 
+# initialize fuel_qty
 fuel_qty = ore_collected // ore_for_1_fuel
 # initialize step as the sqrt of fuel_qty
 step = int(math.sqrt(fuel_qty))
 while True:
     ore_required = ore_for_fuel(fuel_qty, reactions)
-    
+
     if ore_required <= ore_collected:
         step += 1
         fuel_qty += step
@@ -137,7 +138,7 @@ print(f"Low bound: {fuel_qty}")
 
 while True:
     ore_required = ore_for_fuel(fuel_qty + 1, reactions)
-    
+
     if ore_required <= ore_collected:
         fuel_qty += 1
     else:
